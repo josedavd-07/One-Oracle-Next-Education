@@ -5,27 +5,25 @@ public class _01_IngresoLectura {
 
     public static void main(String[] args) {
 
-        //Entrada del ususario se necesita el scaner para estas lecturas de datos
-        Scanner entradaUserTeclado = new Scanner(System.in);
-        entradaUserTeclado.useLocale(Locale.US); // <--- Esta línea es la clave
+        // Creamos el objeto para leer entradas del usuario
+        Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US); // Usar punto como separador decimal
 
-        //input User
-        System.out.println("Por favor ingrese  el nombre de su pelicula favorita: ");
-        String nameFilm  = entradaUserTeclado.nextLine();
+        // Solicitar datos
+        System.out.println("Nombre de tu película favorita:");
+        String nombrePelicula = entrada.nextLine();
 
-        System.out.println("Por favor ingresa la fecha de  lanzamiento de la pelicula que mencionaste: ");
-        int DatePresentationFilm = entradaUserTeclado.nextInt();
+        System.out.println("Año de estreno:");
+        int añoEstreno = entrada.nextInt();
 
-        System.out.println("Por ultimo que nota le das a esta película: ");
-        double calificationFilm = entradaUserTeclado.nextDouble();
+        System.out.println("Nota que le das (ej: 8.5):");
+        double notaUsuario = entrada.nextDouble();
 
-        //Casting de la información de forma explicita perdemos los decimales y queda su valor enteros
+        // Casting a entero (se pierde decimal)
+        int notaEntera = (int)notaUsuario;
 
-        int calificacionInt = (int) calificationFilm;
-
-        System.out.printf("La película mencionada fue: %s\nEsta se estreno en el año: %d\nSu" +
-                " calificación Otorgada es de: %d puntos sobre 10",nameFilm, DatePresentationFilm, calificacionInt)
-        ;
-
+        // Mostrar resultado con formato
+        System.out.printf("Película: %s\nAño: %d\nNota (entera): %d sobre 10\n",
+                nombrePelicula, añoEstreno, notaEntera);
     }
 }

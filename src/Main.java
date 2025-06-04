@@ -1,37 +1,32 @@
 public class Main {
     public static void main(String[] args) {
+
+        // Saludo inicial
         System.out.println("Bienvenid@s a Screen Match");
-        System.out.println("\nPelicula: Matrix\n");
 
-        //type data int
-        int fechaDeLanzamiento = 1966;
+        // Mostrar información de la película
+        System.out.println("\nPelícula: Matrix\n");
 
-        //boolean
-        boolean incluidoEnElPlan = true;
+        // Variables básicas
+        int fechaDeLanzamiento = 1966;           // Entero
+        boolean incluidoEnElPlan = true;         // Booleano
+        double notaDeLaPelicula = 8.2;           // Decimal
 
-        //decimales double lña precidencia de operaciones
-        double notaDeLaPelicula = 8.2;
-        double media = (8.2 + 6.0 + 9.0) /3;
+        // Cálculo de promedio entre 3 notas
+        double media = (8.2 + 6.0 + 9.0) / 3;
+        System.out.println("Promedio de notas: " + media);
 
-        //impresion
-        System.out.println(media);
-
-        //cadena de caracteres string
-        String sinopsis; // sin inicializar
-        String sinopsisFilm = "suspenso";
-
-        //String con bloque de texto evitar llamadas  de tantos println
+        // Texto con múltiples líneas (text block)
         String sinopsisTextBlock = """
-                Matrix es un a paradoja
-                La mejor pelicula del fin del milenio
-                fue lanzada en:
-                """ + fechaDeLanzamiento; //Concatenacion de signo
+            Matrix es una paradoja.
+            La mejor película del fin del milenio.
+            Fue lanzada en:
+            """ + fechaDeLanzamiento;
+
         System.out.println(sinopsisTextBlock);
 
-        //Casteo explicito se pierde datos decimales se  meten datos decimales dentro de  un  entero
-
-        int clasificacion = (int)  (media/2);
-        System.out.println(clasificacion);
-
+        // Casting: convertir double a int
+        int clasificacion = (int)(media / 2);
+        System.out.println("Clasificación (media / 2 redondeada): " + clasificacion);
     }
 }

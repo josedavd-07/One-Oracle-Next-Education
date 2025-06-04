@@ -8,7 +8,7 @@ public class _03_Ejercicios {
         String continuacion = "y mi edad es ";
         int edad = 17;
 
-            System.out.println(saludo + nombre + continuacion + edad);
+        System.out.println(saludo + nombre + continuacion + edad);
         System.out.printf("%s%s%s%d", saludo,nombre,continuacion,edad);
     }
 }

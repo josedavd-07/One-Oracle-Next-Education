@@ -7,31 +7,27 @@ public class _04_Decisiones {
         double notaDeLaPelicula = 8.2;
         String tipoPlan = "plus";
 
-        //Operadores relacionales
+        // 🟦 Condicional simple con operador relacional
         if (FECHA_DE_LANZAMIENTO >= 2023) {
-            System.out.println("Pelicula del año");
-        }
-        else{
-            System.out.println("Pelicula retro que aun vale la pena ver");
+            System.out.println("Película del año");
+        } else {
+            System.out.println("Película retro que aún vale la pena ver");
         }
 
-
-        //Operadores Logicos - operator OR - una almenos verdadera o las dos verdaras y su valor sera true
-        if (incluidoEnELPlan || tipoPlan.equals("plus")){
+        // 🟩 Operadores lógicos - OR (||)
+        // Basta con que UNA condición sea verdadera para que se ejecute el bloque
+        if (incluidoEnELPlan || tipoPlan.equals("plus")) {
             System.out.println("Disfrute de su contenido plus");
-        }
-        else {
-            System.out.println("No puede disfrutar de este contenido, por favor actulize su plan");
+        } else {
+            System.out.println("No puede disfrutar de este contenido, por favor actualice su plan");
         }
 
-
-        //Operadores Logicos - operator AND -  todas deos deben ser vrrdaderas o sino su valor en false
-        if (incluidoEnELPlan && tipoPlan.equals("plus")){
+        // 🟥 Operadores lógicos - AND (&&)
+        // AMBAS condiciones deben ser verdaderas
+        if (incluidoEnELPlan && tipoPlan.equals("plus")) {
             System.out.println("Disfrute de su contenido plus");
+        } else {
+            System.out.println("No puede disfrutar de este contenido, por favor actualice su plan");
         }
-        else {
-            System.out.println("No puede disfrutar de este contenido, por favor actulize su plan");
-        }
-
     }
 }
