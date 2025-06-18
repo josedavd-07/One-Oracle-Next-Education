@@ -1,13 +1,15 @@
+package com.josedavdmast3r.screenmacth.modelos;
+
 public class Pelicula {
-    String nombre;
-    int fechaDeLanzamiento;
-    int duracionEnMinutos;
-    boolean incluidoEnElPlan;
-    double sumaEvaluaciones;
+    public String nombre;
+    public int fechaDeLanzamiento;
+    public int duracionEnMinutos;
+    public boolean incluidoEnElPlan;
+    public double sumaEvaluaciones;
     private int totalEvaluaciones;
 
     //Usa package-private por defecto
-    int getTotalEvaluaciones(){
+    public int getTotalEvaluaciones(){
         return totalEvaluaciones;
     }
 
@@ -22,7 +24,7 @@ public class Pelicula {
     }
 
     // Método de instancia (requiere crear objeto)
-    void showInfo() {
+    public void showInfo() {
         System.out.printf("""
                 >> La película seleccionada fue: %s
                 >> Fue lanzada en el año: %d
@@ -33,13 +35,13 @@ public class Pelicula {
     }
 
     // Método para agregar notas
-    void evaluationFilm(double nota) {
+    public void evaluationFilm(double nota) {
         sumaEvaluaciones += nota;
         totalEvaluaciones++;
     }
 
 
-    double calcularMedia() {
+    public double calcularMedia() {
         return  (sumaEvaluaciones / totalEvaluaciones); // Aquí se puede ajustar el divisor según la cantidad de evaluaciones
     }
 }
