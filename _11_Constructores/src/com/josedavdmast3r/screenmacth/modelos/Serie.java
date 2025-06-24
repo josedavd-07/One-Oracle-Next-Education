@@ -7,6 +7,11 @@ public class Serie extends  Titulo  {
     private int episodiosPorTemporada;
     private  int minutosPorEpisodio;
 
+    //Constructor por defecto de la clase Serie heredado del padre Titulo
+    public Serie(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
+
     @Override
     public int getDuracionEnMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;

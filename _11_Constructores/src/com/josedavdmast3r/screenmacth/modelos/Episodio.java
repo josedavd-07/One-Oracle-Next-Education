@@ -1,9 +1,8 @@
 package com.josedavdmast3r.screenmacth.modelos;
 
 import com.josedavdmast3r.screenmacth.calculos.IClasificacion;
-import com.josedavdmast3r.screenmacth.modelos.Titulo;
 
-public class Episodio extends Titulo implements IClasificacion {
+public class Episodio implements IClasificacion {
     private int numero;
     private String nombre;
 

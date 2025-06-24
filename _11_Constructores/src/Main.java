@@ -7,10 +7,11 @@ import com.josedavdmast3r.screenmacth.modelos.Serie;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Enredados");
-        miPelicula.setFechaDeLanzamiento(2010);
+    public static void main (String[]args){
+        //Se pasa valor por constructor de la clase pelicula
+        Pelicula miPelicula = new Pelicula("Enredados", 2010);
+//            miPelicula.setNombre("Enredados");
+//        miPelicula.setFechaDeLanzamiento(2010);
         miPelicula.setDuracionEnMinutos(100);
         miPelicula.setIncluidoEnElPlan(true);
 
@@ -26,8 +27,8 @@ public class Main {
 
         System.out.println("\n=====================================\n");
         // Crear una instancia de Serie
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La Casa del Dragón");
+        Serie casaDragon = new Serie("La Casa del Dragón", 2022);
+//        casaDragon.setNombre("La Casa del Dragón");
         casaDragon.setFechaDeLanzamiento(2022);
         casaDragon.setTemporadas(1);
         casaDragon.setMinutosPorEpisodio(50);
@@ -43,9 +44,9 @@ public class Main {
 
         System.out.println("\n******************************************\n");
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("El Rey León");
-        otraPelicula.setFechaDeLanzamiento(1994);
+        Pelicula otraPelicula = new Pelicula("El Rey León", 1994);
+//            otraPelicula.setNombre("El Rey León");
+//        otraPelicula.setFechaDeLanzamiento(1994);
         otraPelicula.setDuracionEnMinutos(88);
 
 
@@ -55,8 +56,7 @@ public class Main {
         calculadora.incluye(miPelicula);
         calculadora.incluye(casaDragon);
         calculadora.incluye(otraPelicula);
-        System.out.printf("Tiempo necesario para ver todas las series es de: %d minutos ",
-                calculadora.getTiempoTotal());
+        System.out.printf("Tiempo necesario para ver todas las series es de: %d minutos ",calculadora.getTiempoTotal());
 
         System.out.println("\n******************************************\n");
 
@@ -70,28 +70,23 @@ public class Main {
         episodio1.setTotalVisualizaciones(1200); // Simulando visualizaciones
         filtroRecomendacion.filtra(episodio1);
 
-        System.out.println("\n******************************************\n");
-        //Se usa notacion nueva de java disponible desde java 10 este esto infiere
-        // el tipo de dato de la clase
-        var myFilm = new Pelicula();
-        myFilm.setNombre("Frozen");
-        myFilm.setFechaDeLanzamiento(2013);
-        myFilm.setDuracionEnMinutos(102);
+        var myFilm = new Pelicula("El lorax el guardián del bosque", 2012);
+//            myFilm.setNombre("El lorax el guardián del bosque");
+//        myFilm.setFechaDeLanzamiento(2012);
+        myFilm.setDuracionEnMinutos(90);
 
-        //Utilizaremos las arrayList de java
+        //Haremos uso del arrayList
+        ArrayList<Pelicula> listaDepeliculas = new ArrayList<>();
+        listaDepeliculas.add(miPelicula);
+        listaDepeliculas.add(otraPelicula);
+        listaDepeliculas.add(myFilm);
 
-        //Forma corat de hacer una lista de peliculas
-        // var listaDePeliculas = new ArrayList<Pelicula>();
-
-        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
-        listaDePeliculas.add(miPelicula);
-        listaDePeliculas.add(otraPelicula);
-        listaDePeliculas.add(myFilm);
-
-        System.out.printf(">> El tamaño de la lista es de %d", listaDePeliculas.size());
-        System.out.printf("\n>> La primera película es: %s", listaDePeliculas.get(0).getNombre());
-
-        System.out.println(listaDePeliculas.toString());
-        System.out.printf("\n>>To strin de la pelicula: %s", listaDePeliculas.get(0).toString());
+        System.out.printf("""
+                >> El tamaño de la lista es: %d
+                >> La primera película es: %s
+                >> La lista de películas es: %s
+                """, listaDepeliculas.size(), listaDepeliculas.get(0).getNombre(),listaDepeliculas.toString(),
+                listaDepeliculas.get(0).toString())
+        ;
     }
 }
